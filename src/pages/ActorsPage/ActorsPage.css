@@ -1,0 +1,22 @@
+body {
+    background-color: gr;
+}
+
+row {
+    display: flex; 
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+div.col {
+    /* display: flex; */
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+/* div.col > p {
+    display: block;
+} */
