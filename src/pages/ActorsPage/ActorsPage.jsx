@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ActorsPage.css';
-import ActorCard from '../../models/ActorCard/ActorCard';
-
-let actors = [new ActorCard("Brad",     "pitt",     "1970-03-01", "https://shorturl.at/jATWX", "012345678"),
-              new ActorCard("Angelina", "Jolie",    "1980-02-08", "https://shorturl.at/mvyCN", "012345679")];
+import ActorCard from '../../models/ActorCard';
+import {Container, Row, Col } from 'react-bootstrap';
 
 function ActorsPage() {
+    const [actors, setActors] = useState([
+            new ActorCard("Brad",     "pitt",  "1970-03-01", "https://shorturl.at/jATWX", "012345678"),
+            new ActorCard("Angelina", "Jolie", "1980-02-08", "https://shorturl.at/mvyCN", "012345679")]);
+
     let actorsArr = actors.map(actor =>
                                 // <div key={actor.id} className="col col-sm-4">
-                                <div key={actor.id} className="col">
+                                <Col key={actor.id}>
                                     <img src={actor.image} alt="actor"></img>
-                                    <p>{actor.firstName} {actor.lastName}</p>
-                                    <p>{actor.getAge()}</p>
-                                </div>);  
+                                    <h5>{actor.firstName} {actor.lastName}</h5>
+                                    <h5>{actor.getAge()}</h5>
+                                </Col>);  
     return (
-        <div className="container">
-            <div className="row">
+        <Container>
+            <Row>
                 {actorsArr}
-            </div>
-        </div>
+            </Row>
+        </Container>
     );
 }
 

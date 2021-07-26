@@ -1,1 +1,7 @@
-
+.h1-local {
+    text-align: center;
+    background-color: rgb(13, 11, 63);
+    color: aliceblue;
+    margin: 30px 60px 30px 60px;
+    padding: 50px;
+}
